@@ -1,0 +1,1 @@
+export { initPage } from "./initPage";

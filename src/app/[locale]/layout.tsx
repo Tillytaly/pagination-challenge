@@ -6,7 +6,6 @@ const i18nNamespaces = ["translation"];
 
 export default async function Layout({ children, params: { locale } }: any) {
   const { resources } = await initTranslations(locale, i18nNamespaces);
-
   return (
     <TranslationProvider
       locale={locale}

@@ -1,1 +1,6 @@
-{"color":"color","searchError":"Please provide a number","searchInfo":"Search by ID","year":"year"}
+{
+  "year": "year",
+  "color": "color",
+  "searchInfo": "Search by ID",
+  "searchError": "Please provide a number"
+}

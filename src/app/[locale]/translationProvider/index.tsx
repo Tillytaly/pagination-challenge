@@ -16,7 +16,6 @@ const TranslationProvider = React.memo<
   PropsWithChildren<TranslationProviderProps>
 >(({ children, locale, namespaces, resources }) => {
   const i18n = createInstance();
-
   initTranslations(locale, namespaces, i18n, resources);
 
   return <I18nextProvider i18n={i18n}>{children}</I18nextProvider>;
