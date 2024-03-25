@@ -9,7 +9,7 @@ import { staticData } from "@/app/staticData";
 export const getAppData = async (
   perPage: number,
   currentPage: number = 1,
-  id?: number,
+  id?: number
 ): Promise<IStoreData> => {
   try {
     if (id) {
@@ -39,7 +39,7 @@ export const getAppData = async (
     } else {
       const paginatedProducts = await getPaginatedProducts(
         perPage,
-        currentPage,
+        currentPage
       );
 
       if (!paginatedProducts) {
@@ -69,7 +69,7 @@ export const getAppData = async (
 
 export const initAppData = async (
   entriesPerPage: number,
-  searchParams?: IDynamicKeys,
+  searchParams?: IDynamicKeys
 ) => {
   const { id, page } = transformParams(searchParams);
 
