@@ -10,6 +10,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@types/material-ui": "^0.21.17",
     "@types/react-i18next": "^8.1.0",
     "i18next": "^23.10.1",
     "i18next-resources-to-backend": "^1.2.0",
@@ -22,6 +23,9 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.15.14",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.2",
     "@types/node": "^20",
