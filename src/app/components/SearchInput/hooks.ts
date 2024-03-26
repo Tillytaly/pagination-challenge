@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { setParam } from "@/app/utils";
+import { setParam, removeParam } from "@/app/utils";
 
 import { useRef, useCallback, useEffect, useReducer } from "react";
 
@@ -58,6 +58,11 @@ export function useNumberInput(
   }, [searchedValue, debounceDuration]);
 
   useEffect(() => {
+    if (debouncedValue.length === 0) {
+      removeParam({ key: "id", searchParams }, router.push);
+      return;
+    }
+
     setParam({ key: "id", value: debouncedValue, searchParams }, router.push);
   }, [searchParams, router.push, debouncedValue]);
 

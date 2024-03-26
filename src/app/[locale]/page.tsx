@@ -4,13 +4,14 @@ import { initStoreData } from "@/app/utils";
 import ProductsTable from "@/app/components/ProductsTable";
 import ProductModal from "@/app/components/ProductModal";
 import SearchInput from "../components/SearchInput";
+import PaginationPanel from "../components/PaginationPanel";
 
 import { PageProps } from "@/app/types/page";
 
 import styles from "./page.module.css";
 
 export default async function Home({ searchParams }: PageProps) {
-  const { modal, products, staticData, initialSearchValue } =
+  const { modal, products, staticData, initialSearchValue, totalPagesCount } =
     await initStoreData(PRODUCTS_PER_PAGE, searchParams);
   const withModal = true;
 
@@ -25,6 +26,7 @@ export default async function Home({ searchParams }: PageProps) {
         products={products}
         withModal={withModal}
       />
+      <PaginationPanel totalPagesCount={totalPagesCount} />
       <ProductModal {...modal} />
     </main>
   );

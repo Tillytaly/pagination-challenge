@@ -21,4 +21,5 @@ export interface IStoreData {
   modal: IModalData;
   staticData: IStaticData;
   initialSearchValue: string;
+  totalPagesCount: number;
 }

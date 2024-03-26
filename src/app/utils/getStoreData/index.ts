@@ -87,6 +87,7 @@ export const initStoreData = async (
     products: data.products,
     staticData: data.staticData,
     modal: modalData,
+    totalPagesCount: data.pagination.totalPages,
   };
 
   return storeData;
