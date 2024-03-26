@@ -1,27 +1,29 @@
+$footer-height: 5rem;
+
 .main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
-  padding: 6rem 2rem 0rem;
+  padding: 6rem 2rem 4rem;
   max-width: 1240px;
-  margin: 0rem auto 40px auto;
-  height: 100%;
+  margin: 0 auto;
+  min-height: calc(100dvh - $footer-height);
 
   &Container {
     justify-items: center;
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 4rem;
+    grid-gap: 2rem;
 
-    margin: 2rem 0rem 6rem;
+    margin-bottom: 3rem;
   }
 }
 
 .container {
   &Title {
     letter-spacing: 0.1rem;
-    font-size: 5rem;
+    font-size: 3rem;
     font-family: Brush Script MT;
     font-style: italic;
 

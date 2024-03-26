@@ -4,12 +4,24 @@
 
 @media only screen and (min-width: map.get($breakpoints, "small-screens")) {
   .main {
-    padding: 6rem 3rem 0rem;
+    padding: 8rem 3rem 6rem;
+    margin-bottom: 2rem 0 6rem;
+
+    &Container {
+      grid-gap: 4rem;
+      margin-bottom: 6rem;
+    }
+  }
+
+  .container {
+    &Title {
+      font-size: 5rem;
+    }
   }
 }
 
 @media only screen and (min-width: map.get($breakpoints, "desktop")) {
   .main {
-    padding: 6rem 6rem 0rem;
+    padding: 8rem 6rem 6rem;
   }
 }

@@ -14,6 +14,11 @@ const searchInputData = {
   placeholder: "Search by ID",
 };
 
+export const footerData = {
+  developedBy: "Developed by",
+  developerName: "Agata Ziemniak",
+};
+
 export const staticData: IStaticData = {
   tableColumns,
   searchInputData,

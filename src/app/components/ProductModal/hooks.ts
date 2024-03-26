@@ -1,8 +1,9 @@
 import { useRouter, useSearchParams } from "next/navigation";
+import { useCallback, useRef } from "react";
 
 import { useOnClickOutside } from "@/app/hooks";
 import { removeParam } from "@/app/utils";
-import { useCallback, useRef } from "react";
+
 function useProductModal(isOpen: boolean) {
   const router = useRouter();
   const searchParams = useSearchParams();
