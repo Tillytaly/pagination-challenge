@@ -5,13 +5,13 @@
 @media only screen and (min-width: map.get($breakpoints, "desktop")) {
   .modal {
     &Box {
-      max-width: 480px;
-      padding: 40px 0px 20px;
+      max-width: 48rem;
+      padding: 4rem 0rem 2rem;
     }
   }
   .container {
     &Button {
-      right: 25px;
+      right: 2.5rem;
     }
   }
 }

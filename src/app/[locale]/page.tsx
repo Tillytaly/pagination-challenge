@@ -8,7 +8,8 @@ import PaginationPanel from "../components/PaginationPanel";
 
 import { PageProps } from "@/app/types/page";
 
-import styles from "./page.module.css";
+import styles from "./rwd.module.scss";
+const { main, mainContainer, containerTitle } = styles;
 
 export default async function Home({ searchParams }: PageProps) {
   const { modal, products, staticData, initialSearchValue, totalPagesCount } =
@@ -16,18 +17,22 @@ export default async function Home({ searchParams }: PageProps) {
   const withModal = true;
 
   return (
-    <main className={styles.main}>
-      <SearchInput
-        initialValue={initialSearchValue}
-        {...staticData.searchInputData}
-      />
-      <ProductsTable
-        columns={staticData.tableColumns}
-        products={products}
-        withModal={withModal}
-      />
+    <main className={main}>
+      <div className={mainContainer}>
+        <h1 className={containerTitle}>Colors</h1>
+        <SearchInput
+          initialValue={initialSearchValue}
+          {...staticData.searchInputData}
+        />
+        <ProductsTable
+          columns={staticData.tableColumns}
+          products={products}
+          withModal={withModal}
+        />
+        <ProductModal {...modal} />
+      </div>
+
       <PaginationPanel totalPagesCount={totalPagesCount} />
-      <ProductModal {...modal} />
     </main>
   );
 }

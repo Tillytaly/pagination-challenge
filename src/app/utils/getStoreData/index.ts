@@ -24,13 +24,14 @@ export const getProductBasedData = async (
         return baseProductsState;
       }
 
-      const isAnyDataFound = Object.keys(getProductResult).length > 0;
+      const isAnyDataFound = Object.keys(getProductResult?.data).length > 0;
 
-      if (isAnyDataFound) return baseProductsState;
+      if (!isAnyDataFound) return baseProductsState;
 
       const product = getProductResult?.data;
 
       const products = Array(product);
+
       const totalProductsCount = products.length;
 
       return {

@@ -19,10 +19,7 @@ const ProductsTable = ({
   const { handleRowClick } = useProductsTable(withModal);
 
   return (
-    <TableContainer
-      component={Paper}
-      style={{ backgroundColor: `rgba(255, 255, 255, 0.021)` }}
-    >
+    <TableContainer component={Paper}>
       <Table sx={{ borderCollapse: "separate", borderSpacing: "0 1rem" }}>
         <TableHeading columns={columns} />
         <TableBody>

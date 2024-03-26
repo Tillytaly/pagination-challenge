@@ -5,7 +5,7 @@ import SearchIcon from "@mui/icons-material/Search";
 
 import { INumberInputProps } from "./types";
 
-import styles from "./base.module.scss";
+import styles from "./rwd.module.scss";
 const { wrapper, wrapperInput, wrapperButton } = styles;
 
 const SearchInput = ({
