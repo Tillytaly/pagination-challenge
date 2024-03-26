@@ -6,26 +6,30 @@ import { IDynamicKeys } from "@/app/types";
 import { transformParams } from "../params";
 import { staticData } from "@/app/staticData";
 import { getModalData } from "./utils";
+import { isNumber } from "../validation";
 
 export const getProductBasedData = async (
   perPage: number,
   currentPage: number = 1,
-  id?: number,
+  id?: string
 ): Promise<IProductsData> => {
   try {
-    if (id) {
-      const getProductResult = await getProduct(id);
+    const shouldSearchForSingleProduct = id && isNumber(id);
+
+    if (shouldSearchForSingleProduct) {
+      const getProductResult = await getProduct(Number(id));
 
       if (!getProductResult) {
         console.error("No product found");
         return baseProductsState;
       }
 
-      const isAnyProductFound = Object.entries(getProductResult).length > 0;
+      const isAnyDataFound = Object.keys(getProductResult).length > 0;
 
-      if (isAnyProductFound) return baseProductsState;
+      if (isAnyDataFound) return baseProductsState;
 
       const product = getProductResult?.data;
+
       const products = Array(product);
       const totalProductsCount = products.length;
 
@@ -40,7 +44,7 @@ export const getProductBasedData = async (
     } else {
       const paginatedProducts = await getPaginatedProducts(
         perPage,
-        currentPage,
+        currentPage
       );
 
       if (!paginatedProducts) {
@@ -70,7 +74,7 @@ export const getProductBasedData = async (
 
 export const initStoreData = async (
   entriesPerPage: number,
-  searchParams?: IDynamicKeys,
+  searchParams?: IDynamicKeys
 ): Promise<IStoreData> => {
   const { id, page, modal } = transformParams(searchParams);
 
@@ -79,6 +83,7 @@ export const initStoreData = async (
   const modalData = getModalData(data.products, modal);
 
   const storeData = {
+    initialSearchValue: id,
     products: data.products,
     staticData: data.staticData,
     modal: modalData,

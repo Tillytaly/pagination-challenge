@@ -1,6 +1,1 @@
-{
-  "year": "rok",
-  "color": "kolor",
-  "searchInfo": "Wyszukaj według identyfikatora",
-  "searchError": "Proszę podać numer"
-}
+{"year":"rok","color":"kolor","searchInfo":"Wyszukaj według identyfikatora","searchError":"Proszę podać numer"}

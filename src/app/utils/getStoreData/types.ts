@@ -20,4 +20,5 @@ export interface IStoreData {
   products: IProduct[];
   modal: IModalData;
   staticData: IStaticData;
+  initialSearchValue: string;
 }

@@ -3,7 +3,7 @@ import { isNumber } from "../validation";
 import { ReadonlyURLSearchParams } from "next/navigation";
 
 const processedParams = {
-  id: 0,
+  id: "",
   modal: 0,
   page: 1,
 };
@@ -17,14 +17,23 @@ export const transformParams = (searchParams?: IDynamicKeys) => {
 
       const isValueNumber = isNumber(paramValue);
 
+      const isIDParam = processedParamKey === "id";
+
       if (!isValueNumber) return acc;
+
+      if (isIDParam) {
+        return {
+          ...acc,
+          [processedParamKey]: paramValue,
+        };
+      }
 
       return {
         ...acc,
         [processedParamKey]: Number(paramValue),
       };
     },
-    processedParams,
+    processedParams
   );
 };
 
@@ -38,7 +47,7 @@ export const setParam = (
     value: string;
     searchParams: ReadonlyURLSearchParams;
   },
-  callback: (searchParams: string) => void,
+  callback: (searchParams: string) => void
 ) => {
   const currentParams = new URLSearchParams(searchParams);
 
@@ -57,7 +66,7 @@ export const removeParam = (
     key: string;
     searchParams: ReadonlyURLSearchParams;
   },
-  callback: (searchParams: string) => void,
+  callback: (searchParams: string) => void
 ) => {
   const currentParams = new URLSearchParams(searchParams);
 

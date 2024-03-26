@@ -1,0 +1,45 @@
+@use "sass:map";
+@import "@/app/styles/variables.scss";
+@import "@/app/styles/mixins.scss";
+
+.wrapper {
+  display: flex;
+  align-items: center;
+
+  background-color: white;
+  padding: 1rem 2rem;
+  border-radius: 3rem;
+
+  &Button {
+    all: unset;
+
+    margin-right: 1rem;
+    box-sizing: border-box;
+
+    svg {
+      cursor: pointer;
+
+      width: 2rem;
+      height: 2rem;
+
+      fill: rgb(83, 79, 79);
+    }
+  }
+
+  &Input {
+    width: 100%;
+    padding: 0.3rem;
+    padding-left: 0.5rem;
+    border-radius: 0.6rem;
+    border: 0.1rem solid $light-gray;
+
+    font-size: 16px;
+    font-family: $primary-font;
+    color: rgb(73, 71, 71);
+
+    &:focus,
+    &:active {
+      outline: 0.1rem solid rgb(140, 139, 139);
+    }
+  }
+}

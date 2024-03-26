@@ -13,10 +13,10 @@ export function useProductsTable(isTableWithModal: boolean) {
       const stringifiedID = id.toString();
       setParam(
         { key: "modal", value: stringifiedID, searchParams },
-        router.push,
+        router.push
       );
     },
-    [isTableWithModal, searchParams, router.push],
+    [isTableWithModal, searchParams, router.push]
   );
 
   return { handleRowClick };
