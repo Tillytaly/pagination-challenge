@@ -13,7 +13,7 @@ import styles from "./rwd.module.scss";
 const { modal, modalBox, container, containerButton } = styles;
 
 const ProductModal = ({ isOpen, product }: IProductModal) => {
-  const { handleCloseModal } = useProductModal();
+  const { handleCloseModal, modalRef } = useProductModal(isOpen);
 
   if (product.length === 0) return <></>;
 
@@ -27,6 +27,7 @@ const ProductModal = ({ isOpen, product }: IProductModal) => {
         className={modal}
       >
         <div
+          ref={modalRef}
           className={modalBox}
           style={{ boxShadow: `8px 8px 21px -5px ${modalProduct.color}` }}
         >
