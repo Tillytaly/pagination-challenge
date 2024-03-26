@@ -2,7 +2,7 @@ import { v4 as uID } from "uuid";
 import { IStaticData } from "./types";
 
 const tableColumns = [
-  { id: uID(), title: "id" },
+  { id: uID(), title: "ID" },
   { id: uID(), title: "name" },
   { id: uID(), title: "year" },
 ];

@@ -1,0 +1,14 @@
+@use "sass:map";
+@import "@/app/styles/variables.scss";
+
+.heading {
+  &Row {
+    > th {
+      font-size: map.get($font-sizes, "small");
+      font-family: $primary-font;
+      font-weight: 600;
+
+      text-transform: capitalize;
+    }
+  }
+}

@@ -5,14 +5,15 @@
     top: 50%;
     left: 50%;
 
+    max-width: 40rem;
     width: 95%;
-    padding: 20px 0px;
+    padding: 2rem 0px;
 
     background-color: white;
     outline: white;
     border-color: white;
 
-    border-radius: 5px;
+    border-radius: 0.5rem;
 
     transform: translate(-50%, -50%);
   }
@@ -39,5 +40,15 @@
     flex: 1;
     width: 50%;
     aspect-ratio: 1;
+  }
+}
+
+.container {
+  position: relative;
+
+  &Button {
+    position: absolute;
+    top: 0px;
+    right: 15px;
   }
 }

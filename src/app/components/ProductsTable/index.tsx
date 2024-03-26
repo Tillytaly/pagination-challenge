@@ -1,13 +1,15 @@
 "use client";
+import { useProductsTable } from "./hooks";
+
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableContainer from "@mui/material/TableContainer";
 
-import ProductsTableRow from "./ProductsTableRow";
 import TableHeading from "./TableHeading";
+import ProductsTableRow from "./ProductsTableRow";
+
 import { IProductTableProps } from "./types";
-import { useProductsTable } from "./hooks";
 
 const ProductsTable = ({
   products,
@@ -17,14 +19,17 @@ const ProductsTable = ({
   const { handleRowClick } = useProductsTable(withModal);
 
   return (
-    <TableContainer component={Paper}>
-      <Table>
+    <TableContainer
+      component={Paper}
+      style={{ backgroundColor: `rgba(255, 255, 255, 0.021)` }}
+    >
+      <Table sx={{ borderCollapse: "separate", borderSpacing: "0 1rem" }}>
         <TableHeading columns={columns} />
         <TableBody>
           {products.map(({ color, id, ...productRestProps }) => (
             <ProductsTableRow
               key={id}
-              align="left"
+              align="center"
               colour={color}
               id={id}
               onClick={handleRowClick}

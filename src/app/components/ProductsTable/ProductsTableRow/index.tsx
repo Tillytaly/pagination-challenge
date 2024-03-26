@@ -7,6 +7,9 @@ import { IProductRowProps } from "./types";
 import TableCell from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
 
+import styles from "./rwd.module.scss";
+const { row } = styles;
+
 const ProductsTableRow = ({
   align,
   onClick,
@@ -20,6 +23,7 @@ const ProductsTableRow = ({
     <>
       <TableRow
         key={id}
+        className={row}
         style={{ backgroundColor: colour }}
         onClick={() => onClick(id)}
       >
