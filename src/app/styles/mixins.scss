@@ -12,3 +12,22 @@
     font-size: map.get($font-sizes, "small");
   }
 }
+
+@mixin error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 2rem;
+  height: 100vh;
+  color: black;
+}
+
+@mixin error-title {
+  margin-bottom: 0.5rem;
+
+  font-size: 3.5rem;
+  font-weight: bold;
+  font-family: $primary-font;
+}

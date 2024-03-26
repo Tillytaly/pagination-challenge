@@ -1,0 +1,39 @@
+@use "sass:map";
+@import "../mixins.scss";
+@import "../variables.scss";
+
+.container {
+  display: grid;
+
+  @include error-container;
+
+  &Title {
+    @include error-title;
+  }
+
+  &Text {
+    margin-bottom: 2rem;
+    font-size: map.get($font-sizes, "big");
+    font-family: $primary-font;
+
+    &Big {
+      font-weight: bold;
+      font-size: 3rem;
+      font-family: $primary-font;
+    }
+  }
+
+  &Btn {
+    padding: 1rem 1.5rem;
+    background-color: $light-blue;
+    border-radius: 0.4rem;
+
+    font-weight: bold;
+    font-family: $primary-font;
+    font-size: map.get($font-sizes, "medium");
+
+    &:hover {
+      background-color: rgba(85, 148, 250, 0.632);
+    }
+  }
+}

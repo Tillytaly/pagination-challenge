@@ -1,0 +1,33 @@
+@import "../mixins.scss";
+
+$icon-dimension: 15rem;
+.notFound {
+  @include error-container;
+  font-size: 2rem;
+
+  &Container {
+    display: grid;
+    grid-gap: 2rem;
+  }
+
+  svg {
+    height: $icon-dimension;
+    width: $icon-dimension;
+    margin-top: 5rem;
+  }
+}
+
+.container {
+  &Title {
+    @include error-title;
+  }
+
+  &Link {
+    color: $light-blue;
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
