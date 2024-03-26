@@ -1,10 +1,11 @@
 "use client";
 
-import TableCell from "@mui/material/TableCell";
-import TableRow from "@mui/material/TableRow";
 import { useTranslation } from "react-i18next";
 
 import { IProductRowProps } from "./types";
+
+import TableCell from "@mui/material/TableCell";
+import TableRow from "@mui/material/TableRow";
 
 const ProductsTableRow = ({
   align,
@@ -12,6 +13,7 @@ const ProductsTableRow = ({
   ...productDetails
 }: IProductRowProps) => {
   const { t } = useTranslation();
+
   const { colour, id, name, year } = productDetails;
 
   return (
@@ -19,7 +21,7 @@ const ProductsTableRow = ({
       <TableRow
         key={id}
         style={{ backgroundColor: colour }}
-        onClick={() => onClick(productDetails)}
+        onClick={() => onClick(id)}
       >
         <TableCell align={align}>{id}</TableCell>
         <TableCell align={align}>{t(name)}</TableCell>

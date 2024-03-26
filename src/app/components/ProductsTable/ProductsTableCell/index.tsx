@@ -1,3 +1,6 @@
-import TableCell from '@mui/material/TableCell';
+import TableCell from "@mui/material/TableCell";
+import { IProductCell } from "./types";
 
-const ProductsTableCell = () => {};
+export const ProductsTableCell = ({ title }: IProductCell) => {
+  return <TableCell>{title}</TableCell>;
+};

@@ -1,0 +1,11 @@
+@use "sass:map";
+@import "@/app/styles/variables.scss";
+@import "./base.module.scss";
+
+@media only screen and (min-width: map.get($breakpoints, "desktop")) {
+  .detail {
+    &Value {
+      font-size: map.get($font-sizes, "medium");
+    }
+  }
+}

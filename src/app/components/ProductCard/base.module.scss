@@ -1,0 +1,36 @@
+@import "@/app/styles/variables.scss";
+@import "@/app/styles/mixins.scss";
+
+$side-padding: 15px;
+
+.heading {
+  padding: 0px 20px;
+
+  &Title {
+    margin-bottom: 20px;
+
+    font-size: 20px;
+    font-weight: 500;
+    font-family: $primary-font;
+
+    color: black;
+    letter-spacing: 0.03em;
+    text-transform: capitalize;
+  }
+  &Label {
+    @include faded-text;
+  }
+}
+
+.details {
+  padding: 0px $side-padding;
+}
+
+.colorContainer {
+  height: 180px;
+  margin: 20px 0px;
+
+  -webkit-box-shadow: inset 5px -1px 36px -19px rgba(66, 68, 90, 1);
+  -moz-box-shadow: inset 5px -1px 36px -19px rgba(66, 68, 90, 1);
+  box-shadow: inset 5px -1px 36px -19px rgba(66, 68, 90, 1);
+}

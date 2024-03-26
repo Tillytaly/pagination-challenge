@@ -3,4 +3,5 @@ import { IColumn } from "@/app/staticData/types";
 export interface IProductTableProps {
   columns: IColumn[];
   products: IProduct[];
+  withModal?: boolean;
 }

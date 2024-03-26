@@ -1,0 +1,19 @@
+$primary-font: Optima, system-ui, Avenir, Helvetica, Arial, sans-serif !default;
+$secondary-font: "Roboto", sans-serif;
+
+$light-gray: rgba(182, 178, 186, 0.991);
+
+$breakpoints: (
+  "tablet": 480px,
+  "small-screens": 769px,
+  "small-2": 990px,
+  "desktop": 1025px,
+) !default;
+
+$font-sizes: (
+  "smaller": 1.6rem,
+  "small": 1.8rem,
+  "medium": 2rem,
+  "semi-big": 2.2rem,
+  "big": 2.4rem,
+) !default;

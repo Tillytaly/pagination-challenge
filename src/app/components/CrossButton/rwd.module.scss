@@ -1,0 +1,13 @@
+@use "sass:map";
+@import "@/app/styles/variables.scss";
+@import "./base.module.scss";
+
+@media only screen and (min-width: map.get($breakpoints, "desktop")) {
+  .crossBtn {
+    padding: 8px;
+    svg {
+      width: 25px;
+      height: 25px;
+    }
+  }
+}

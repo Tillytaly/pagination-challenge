@@ -1,0 +1,18 @@
+@use "sass:map";
+@import "@/app/styles/variables.scss";
+@import "@/app/styles/mixins.scss";
+
+.detail {
+  &Label {
+    margin-bottom: 10px;
+
+    @include faded-text;
+  }
+  &Value {
+    margin-bottom: 15px;
+    color: black;
+
+    font-family: $secondary-font;
+    font-size: map.get($font-sizes, "small");
+  }
+}

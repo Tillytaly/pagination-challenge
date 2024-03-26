@@ -1,0 +1,43 @@
+@import "@/app/styles/variables.scss";
+.modal {
+  &Box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 95%;
+    padding: 20px 0px;
+
+    background-color: white;
+    outline: white;
+    border-color: white;
+
+    border-radius: 5px;
+
+    transform: translate(-50%, -50%);
+  }
+}
+
+.box {
+  &Details {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.details {
+  flex-shrink: 0;
+  > p {
+    margin-bottom: 8px;
+    font-family: $primary-font;
+    font-size: 16px;
+    color: black;
+  }
+
+  &Color {
+    border-radius: 50%;
+    flex: 1;
+    width: 50%;
+    aspect-ratio: 1;
+  }
+}

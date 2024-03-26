@@ -1,28 +1,29 @@
 import { getProduct, getPaginatedProducts } from "../getProducts";
-import { baseDataState, basePaginationState } from "./utils";
-import { IStoreData } from "./types";
+import { baseProductsState, basePaginationState } from "./utils";
+import { IProductsData, IStoreData } from "./types";
 
 import { IDynamicKeys } from "@/app/types";
 import { transformParams } from "../params";
 import { staticData } from "@/app/staticData";
+import { getModalData } from "./utils";
 
-export const getAppData = async (
+export const getProductBasedData = async (
   perPage: number,
   currentPage: number = 1,
-  id?: number
-): Promise<IStoreData> => {
+  id?: number,
+): Promise<IProductsData> => {
   try {
     if (id) {
       const getProductResult = await getProduct(id);
 
       if (!getProductResult) {
         console.error("No product found");
-        return baseDataState;
+        return baseProductsState;
       }
 
       const isAnyProductFound = Object.entries(getProductResult).length > 0;
 
-      if (isAnyProductFound) return baseDataState;
+      if (isAnyProductFound) return baseProductsState;
 
       const product = getProductResult?.data;
       const products = Array(product);
@@ -39,12 +40,12 @@ export const getAppData = async (
     } else {
       const paginatedProducts = await getPaginatedProducts(
         perPage,
-        currentPage
+        currentPage,
       );
 
       if (!paginatedProducts) {
         console.error("No products found");
-        return baseDataState;
+        return baseProductsState;
       }
 
       const products = paginatedProducts?.data;
@@ -63,22 +64,25 @@ export const getAppData = async (
     }
   } catch (e) {
     console.error(e);
-    return baseDataState;
+    return baseProductsState;
   }
 };
 
-export const initAppData = async (
+export const initStoreData = async (
   entriesPerPage: number,
-  searchParams?: IDynamicKeys
-) => {
-  const { id, page } = transformParams(searchParams);
+  searchParams?: IDynamicKeys,
+): Promise<IStoreData> => {
+  const { id, page, modal } = transformParams(searchParams);
 
-  const data = await getAppData(entriesPerPage, page, id);
+  const data = await getProductBasedData(entriesPerPage, page, id);
 
-  const pageData = {
+  const modalData = getModalData(data.products, modal);
+
+  const storeData = {
     products: data.products,
     staticData: data.staticData,
+    modal: modalData,
   };
 
-  return pageData;
+  return storeData;
 };

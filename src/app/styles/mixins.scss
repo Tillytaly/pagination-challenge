@@ -1,0 +1,14 @@
+@use "sass:map";
+@import "./variables.scss";
+
+@mixin faded-text {
+  font-size: map.get($font-sizes, "smaller");
+  font-weight: 600;
+  font-family: $secondary-font;
+
+  color: $light-gray;
+
+  @media only screen and (min-width: map.get($breakpoints, "desktop")) {
+    font-size: map.get($font-sizes, "small");
+  }
+}

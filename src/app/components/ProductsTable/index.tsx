@@ -7,8 +7,15 @@ import TableContainer from "@mui/material/TableContainer";
 import ProductsTableRow from "./ProductsTableRow";
 import TableHeading from "./TableHeading";
 import { IProductTableProps } from "./types";
+import { useProductsTable } from "./hooks";
 
-const ProductsTable = ({ products, columns }: IProductTableProps) => {
+const ProductsTable = ({
+  products,
+  columns,
+  withModal = false,
+}: IProductTableProps) => {
+  const { handleRowClick } = useProductsTable(withModal);
+
   return (
     <TableContainer component={Paper}>
       <Table>
@@ -20,8 +27,8 @@ const ProductsTable = ({ products, columns }: IProductTableProps) => {
               align="left"
               colour={color}
               id={id}
+              onClick={handleRowClick}
               {...productRestProps}
-              onClick={() => {}}
             />
           ))}
         </TableBody>

@@ -1,0 +1,17 @@
+@use "sass:map";
+@import "@/app/styles/variables.scss";
+@import "./base.module.scss";
+
+@media only screen and (min-width: map.get($breakpoints, "desktop")) {
+  .modal {
+    &Box {
+      max-width: 480px;
+      padding: 40px 0px 20px;
+    }
+  }
+  .container {
+    &Button {
+      right: 25px;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.crossBtn {
+  display: flex;
+
+  padding: 10px;
+  background-color: transparent;
+  border: 1px solid grey;
+  border-radius: 50%;
+
+  transition: border-color 0.3s linear;
+
+  svg {
+    transition: fill 0.3s linear;
+    fill: grey;
+  }
+  &:hover,
+  &:focus {
+    border-color: black;
+    svg {
+      fill: black;
+    }
+  }
+}

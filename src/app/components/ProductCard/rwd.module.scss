@@ -1,0 +1,25 @@
+@use "sass:map";
+@import "@/app/styles/variables.scss";
+@import "./base.module.scss";
+
+@media only screen and (min-width: map.get($breakpoints, "small-screens")) {
+  .heading {
+    &Title {
+      font-size: map.get($font-sizes, "semi-big");
+    }
+  }
+}
+
+@media only screen and (min-width: map.get($breakpoints, "desktop")) {
+  .heading {
+    &Title {
+      font-size: map.get($font-sizes, "big");
+    }
+  }
+
+  .color {
+    &Container {
+      margin: 25px 0px;
+    }
+  }
+}

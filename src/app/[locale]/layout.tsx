@@ -1,6 +1,7 @@
 import React from "react";
 import initTranslations from "@/app/initTranslations";
 import TranslationProvider from "@/app/[locale]/translationProvider";
+import { StyledEngineProvider } from "@mui/material/styles";
 
 const i18nNamespaces = ["translation"];
 
@@ -12,7 +13,7 @@ export default async function Layout({ children, params: { locale } }: any) {
       resources={resources}
       namespaces={i18nNamespaces}
     >
-      {children}
+      <StyledEngineProvider injectFirst>{children}</StyledEngineProvider>
     </TranslationProvider>
   );
 }

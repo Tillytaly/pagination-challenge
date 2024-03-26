@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import { TUseTogglerTuple } from './types';
+import { TUseTogglerTuple } from "./types";
 export function useToggler(initialState: boolean = false): TUseTogglerTuple {
   const [isOn, setIsOn] = useState(initialState);
 
