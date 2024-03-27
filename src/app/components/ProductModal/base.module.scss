@@ -19,36 +19,12 @@
   }
 }
 
-.box {
-  &Details {
-    display: flex;
-    align-items: center;
-  }
-}
-
-.details {
-  flex-shrink: 0;
-  > p {
-    margin-bottom: 8px;
-    font-family: $primary-font;
-    font-size: 16px;
-    color: black;
-  }
-
-  &Color {
-    border-radius: 50%;
-    flex: 1;
-    width: 50%;
-    aspect-ratio: 1;
-  }
-}
-
 .container {
   position: relative;
 
   &Button {
     position: absolute;
     top: 0px;
-    right: 15px;
+    right: 1.5rem;
   }
 }

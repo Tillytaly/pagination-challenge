@@ -12,6 +12,7 @@ const searchInputData = {
   label: "search",
   name: "search",
   searchInfo: "searchBy",
+  errorMessage: "provideNumber",
 };
 
 export const staticData: IStaticData = {

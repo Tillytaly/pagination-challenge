@@ -1,15 +1,15 @@
 @import "@/app/styles/variables.scss";
 @import "@/app/styles/mixins.scss";
 
-$side-padding: 15px;
+$side-padding: 1.5rem;
 
 .heading {
-  padding: 0px 20px;
+  padding: 0rem 2rem;
 
   &Title {
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 500;
     font-family: $primary-font;
 
@@ -27,8 +27,8 @@ $side-padding: 15px;
 }
 
 .colorContainer {
-  height: 180px;
-  margin: 20px 0px;
+  height: 18rem;
+  margin: 2rem 0px;
 
   -webkit-box-shadow: inset 5px -1px 36px -19px rgba(66, 68, 90, 1);
   -moz-box-shadow: inset 5px -1px 36px -19px rgba(66, 68, 90, 1);

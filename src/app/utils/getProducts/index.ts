@@ -1,6 +1,6 @@
 import { IGetProductsPerPageResponse, IGetProduct } from "./types";
 import { PRODUCTS_API_URL } from "@/app/constants";
-import "../validation";
+import "../../lib/validation";
 
 export const getPaginatedProducts = async (
   perPage: number,

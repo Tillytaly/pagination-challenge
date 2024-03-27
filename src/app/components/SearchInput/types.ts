@@ -9,7 +9,7 @@ export interface INumberInputState {
 }
 
 export enum Actions {
-  VALUE_CHANGED = "CHANGED_PAGE",
+  VALUE_CHANGED = "VALUE_CHANGED",
   DEBOUNCE_SUCCESS = "DEBOUNCE_SUCCESS",
 }
 

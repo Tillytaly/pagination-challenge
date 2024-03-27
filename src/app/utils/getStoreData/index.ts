@@ -6,7 +6,7 @@ import { IDynamicKeys } from "@/app/types";
 import { transformParams } from "../params";
 import { staticData } from "@/app/staticData";
 import { getModalData } from "./utils";
-import { isNumber } from "../validation";
+import { isNumber } from "../../lib/validation";
 
 export const getProductBasedData = async (
   perPage: number,

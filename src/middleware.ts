@@ -7,7 +7,6 @@ export default createMiddleware({
   defaultLocale: "en",
 });
 
-// only applies this middleware to files in the app directory
 export const config = {
   matcher: ["/((?!api|_next|.*\\..*).*)"],
 };

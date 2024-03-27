@@ -1,8 +1,6 @@
 import { Reducer } from "./types";
-
-import { Action, Actions, INumberInputState } from "./types";
-
-const isNumber = (value: string) => !Number.isNaN(Number(value));
+import { isNumber } from "@/app/lib/validation";
+import { Action, INumberInputState } from "./types";
 
 export const inputInitialState: INumberInputState = {
   debouncedValue: "",
@@ -10,11 +8,9 @@ export const inputInitialState: INumberInputState = {
   hasError: false,
 };
 
-const { DEBOUNCE_SUCCESS, VALUE_CHANGED } = Actions;
-
 export const reducer: Reducer<INumberInputState, Action> = (state, action) => {
   switch (action.type) {
-    case VALUE_CHANGED: {
+    case "VALUE_CHANGED": {
       const { value } = action.payload;
       const isInputNumber = isNumber(value);
 
@@ -30,7 +26,7 @@ export const reducer: Reducer<INumberInputState, Action> = (state, action) => {
         searchedValue: value,
       };
     }
-    case DEBOUNCE_SUCCESS:
+    case "DEBOUNCE_SUCCESS":
       return {
         ...state,
         debouncedValue: state.searchedValue,

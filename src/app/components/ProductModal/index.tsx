@@ -15,17 +15,14 @@ const { modal, modalBox, container, containerButton } = styles;
 const ProductModal = ({ isOpen, product }: IProductModal) => {
   const { handleCloseModal, modalRef } = useProductModal(isOpen);
 
-  if (product.length === 0) return <></>;
+  const shouldShowModal = product.length !== 0;
+  if (!shouldShowModal) return <></>;
 
   const modalProduct = product[0];
 
   return (
     <Portal>
-      <Modal
-        open={isOpen}
-        aria-labelledby="modal-modal-title"
-        className={modal}
-      >
+      <Modal open={isOpen} aria-labelledby="modal-title" className={modal}>
         <div
           ref={modalRef}
           className={modalBox}

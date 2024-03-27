@@ -8,7 +8,7 @@ import SearchInput from "../components/SearchInput";
 import PaginationPanel from "../components/PaginationPanel";
 import { PageProps } from "@/app/types/page";
 
-import styles from "./rwd.module.scss";
+import styles from "./styles/page/rwd.module.scss";
 const { main, mainContainer, containerTitle } = styles;
 
 export default async function Home({ searchParams }: PageProps) {

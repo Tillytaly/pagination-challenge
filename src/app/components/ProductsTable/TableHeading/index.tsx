@@ -4,7 +4,7 @@ import TableRow from "@mui/material/TableRow";
 import { useTranslations } from "next-intl";
 
 import styles from "./rwd.module.scss";
-const { heading, headingRow } = styles;
+const { headingRow } = styles;
 
 import { ITableHeadingProps } from "./types";
 const TableHeading = ({ columns }: ITableHeadingProps) => {

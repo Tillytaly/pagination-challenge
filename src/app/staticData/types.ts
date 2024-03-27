@@ -10,6 +10,7 @@ export interface Input {
 }
 export interface SearchInput extends Input {
   searchInfo: string;
+  errorMessage: string;
 }
 
 export interface IStaticData {

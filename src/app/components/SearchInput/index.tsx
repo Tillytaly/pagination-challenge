@@ -2,13 +2,13 @@
 
 import { useTranslations } from "next-intl";
 import { useNumberInput } from "./hooks";
-
+import { cx } from "@/app/lib/utils";
 import SearchIcon from "@mui/icons-material/Search";
 
 import { INumberInputProps } from "./types";
 
 import styles from "./rwd.module.scss";
-const { wrapper, wrapperInput, wrapperButton } = styles;
+const { wrapper, wrapperInput, wrapperButton, wrapperInputError } = styles;
 
 const SearchInput = ({
   id,
@@ -16,9 +16,15 @@ const SearchInput = ({
   name,
   searchInfo,
   initialValue,
+  errorMessage,
 }: INumberInputProps) => {
-  const { handleInputChange, value, handleIconClick, searchInputRef } =
-    useNumberInput(initialValue);
+  const {
+    handleInputChange,
+    value,
+    handleIconClick,
+    searchInputRef,
+    hasError,
+  } = useNumberInput(initialValue);
   const t = useTranslations("home");
 
   return (
@@ -34,10 +40,10 @@ const SearchInput = ({
         <input
           ref={searchInputRef}
           aria-label={t(label)}
-          className={wrapperInput}
+          className={cx(wrapperInput, hasError && wrapperInputError)}
           id={id}
           name={name}
-          placeholder={t(searchInfo)}
+          placeholder={hasError ? t(errorMessage) : t(searchInfo)}
           value={value}
           onChange={(e) => handleInputChange(e)}
         />

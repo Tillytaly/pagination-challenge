@@ -1,6 +1,7 @@
 import { IDynamicKeys } from "@/app/types";
-import { isNumber } from "../validation";
+import { isNumber } from "../../lib/validation";
 import { ReadonlyURLSearchParams } from "next/navigation";
+import { DataToSetSearchParam, DataToRemoveParam } from "./types";
 
 const processedParams = {
   id: "",
@@ -38,15 +39,7 @@ export const transformParams = (searchParams?: IDynamicKeys) => {
 };
 
 export const setParam = (
-  {
-    key,
-    searchParams,
-    value,
-  }: {
-    key: string;
-    value: string;
-    searchParams: ReadonlyURLSearchParams;
-  },
+  { key, searchParams, value }: DataToSetSearchParam,
   callback: (searchParams: string) => void
 ) => {
   const currentParams = new URLSearchParams(searchParams);
@@ -59,13 +52,7 @@ export const setParam = (
 };
 
 export const removeParam = (
-  {
-    key,
-    searchParams,
-  }: {
-    key: string;
-    searchParams: ReadonlyURLSearchParams;
-  },
+  { key, searchParams }: DataToRemoveParam,
   callback: (searchParams: string) => void
 ) => {
   const currentParams = new URLSearchParams(searchParams);

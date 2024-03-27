@@ -4,10 +4,10 @@
 
 @media only screen and (min-width: map.get($breakpoints, "desktop")) {
   .crossBtn {
-    padding: 8px;
+    padding: 0.8rem;
     svg {
-      width: 25px;
-      height: 25px;
+      width: 2.5rem;
+      height: 2.5rem;
     }
   }
 }
