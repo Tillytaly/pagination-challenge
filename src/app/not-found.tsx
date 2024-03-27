@@ -1,5 +1,4 @@
 "use-client";
-import { useTranslations } from "next-intl";
 
 import Link from "next/link";
 import AnnouncementIcon from "@mui/icons-material/Announcement";

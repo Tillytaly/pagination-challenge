@@ -19,6 +19,8 @@ const Navigation = () => {
 
         const isActive = params?.locale === lang;
 
+        console.log(isActive, params, lang, "params", "l");
+
         return (
           <Link
             key={idx}

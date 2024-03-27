@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 
 import { IProductRowProps } from "./types";
 
@@ -15,10 +15,8 @@ const ProductsTableRow = ({
   onClick,
   ...productDetails
 }: IProductRowProps) => {
-  const { t } = useTranslation();
-
   const { colour, id, name, year } = productDetails;
-
+  const t = useTranslations("home");
   return (
     <>
       <TableRow
