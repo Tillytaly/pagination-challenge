@@ -16,6 +16,7 @@ Run `npm install` to install all necessary dependencies
 
 ```bash
 npm install
+
 ```
 
 and `npm start` to run the app in development mode
@@ -24,7 +25,7 @@ and `npm start` to run the app in development mode
 
 ```bash
 
-Next.js Typescript Javascript SCSS REST
+Next.js React Typescript Javascript SCSS REST
 
 ```
 
@@ -39,3 +40,4 @@ mui/icons-material  i18nexus prettier next-intl UUID
 
 - Add tests,
 - Adjust styles according to user lightness preferences,
+- Add translations to Error pages as well,
