@@ -10,8 +10,7 @@ const Navigation = () => {
   return (
     <nav className={navigation}>
       {SUPPORTED_LOCALES.map((lang, idx) => {
-        const isZeroIndex = !idx;
-        const label = isZeroIndex ? lang : `/ ${lang}`;
+        const label = `/ ${lang}`;
 
         return (
           <Link key={idx} href={`/${lang}`} className={navigationLink}>
