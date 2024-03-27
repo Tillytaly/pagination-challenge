@@ -1,4 +1,3 @@
-import { getTranslations } from "next-intl/server";
 import { PRODUCTS_PER_PAGE } from "@/app/constants";
 import { initStoreData } from "@/app/utils";
 
@@ -21,12 +20,10 @@ export default async function Home({ searchParams }: PageProps) {
     title,
   } = await initStoreData(PRODUCTS_PER_PAGE, searchParams);
   const withModal = true;
-  const t = await getTranslations("home");
-
   return (
     <main className={main}>
       <div className={mainContainer}>
-        <h1 className={containerTitle}>{t(title)}</h1>
+        <h1 className={containerTitle}>{title}</h1>
         <SearchInput
           initialValue={initialSearchValue}
           {...staticData.searchInputData}
