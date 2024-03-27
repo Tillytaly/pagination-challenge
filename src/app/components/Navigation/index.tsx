@@ -6,6 +6,8 @@ import styles from "./rwd.module.scss";
 const { navigation, navigationLink } = styles;
 
 const Navigation = () => {
+  const params = useParams();
+
   return (
     <nav className={navigation}>
       {SUPPORTED_LOCALES.map((lang, idx) => {
