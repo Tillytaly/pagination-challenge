@@ -24,7 +24,7 @@ $rounded-bottom-corner: 1rem;
     margin-right: 1rem;
 
     font-size: 1.2rem;
-    font-size: calc(map.get($font-sizes, "base") - 0.2rem);
+    font-size: calc(map.get($font-sizes, "smaller") - 0.2rem);
     font-weight: 500;
     font-family: $primary-font;
 

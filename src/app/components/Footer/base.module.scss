@@ -20,5 +20,7 @@
   &Link {
     font-size: map.get($font-sizes, "base");
     font-style: italic;
+
+    color: black;
   }
 }
