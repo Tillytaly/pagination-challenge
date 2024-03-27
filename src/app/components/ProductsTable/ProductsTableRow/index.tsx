@@ -26,7 +26,7 @@ const ProductsTableRow = ({
         onClick={() => onClick(id)}
       >
         <TableCell align={align}>{id}</TableCell>
-        <TableCell align={align}>{t(name)}</TableCell>
+        <TableCell align={align}>{name}</TableCell>
         <TableCell align={align}>{year}</TableCell>
       </TableRow>
     </>
