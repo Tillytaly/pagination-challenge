@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import { PRODUCTS_PER_PAGE } from "@/app/constants";
 import { initStoreData } from "@/app/utils";
 
@@ -11,6 +12,7 @@ import styles from "./styles/page/rwd.module.scss";
 const { main, mainContainer, containerTitle } = styles;
 
 export default async function Home({ searchParams }: PageProps) {
+  const t = await getTranslations("home");
   const {
     modal,
     products,
@@ -19,11 +21,12 @@ export default async function Home({ searchParams }: PageProps) {
     totalPagesCount,
     title,
   } = await initStoreData(PRODUCTS_PER_PAGE, searchParams);
+
   const withModal = true;
   return (
     <main className={main}>
       <div className={mainContainer}>
-        <h1 className={containerTitle}>{title}</h1>
+        <h1 className={containerTitle}>{t(title)}</h1>
         <SearchInput
           initialValue={initialSearchValue}
           {...staticData.searchInputData}
