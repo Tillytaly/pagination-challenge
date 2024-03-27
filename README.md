@@ -12,14 +12,6 @@ Use the console in your favourite IDE to clone the repository
 git clone https://github.com/Tillytaly/PartialPassword.git
 ```
 
-### Create an .env file at the root of your project:
-
-insert
-
-```
-I18NEXUS_API_KEY='L-TSZ0PuQICA97xqVYz2kQ'
-```
-
 Run `npm install` to install all necessary dependencies
 
 ```bash
