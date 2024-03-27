@@ -14,7 +14,8 @@ export const reducer: Reducer<INumberInputState, Action> = (state, action) => {
       const { value } = action.payload;
       const isInputNumber = isNumber(value);
 
-      if (!isInputNumber) {
+      const isValueNotEmpty = value.length > 0;
+      if (!isInputNumber && isValueNotEmpty) {
         return {
           ...state,
           hasError: true,
@@ -30,6 +31,7 @@ export const reducer: Reducer<INumberInputState, Action> = (state, action) => {
       return {
         ...state,
         debouncedValue: state.searchedValue,
+        hasError: false,
       };
     default:
       return state;

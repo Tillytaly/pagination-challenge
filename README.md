@@ -38,3 +38,4 @@ mui/icons-material  i18nexus prettier next-intl UUID
 # If I would have more time I would:
 
 - Add tests,
+- Adjust styles according to user lightness preferences,

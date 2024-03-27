@@ -35,8 +35,9 @@ export function useNumberInput(
   const handleInputChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const { value } = e.target;
+
       dispatch({
-        payload: { value },
+        payload: { value: value.trim() },
         type: VALUE_CHANGED,
       });
     },

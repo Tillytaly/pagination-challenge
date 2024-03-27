@@ -38,6 +38,7 @@ const SearchInput = ({
           <SearchIcon />
         </button>
         <input
+          autoComplete="off"
           ref={searchInputRef}
           aria-label={t(label)}
           className={cx(wrapperInput, hasError && wrapperInputError)}
