@@ -26,8 +26,8 @@
     svg {
       cursor: pointer;
 
-      width: 2rem;
-      height: 2rem;
+      width: 2.5rem;
+      height: 2.5rem;
 
       fill: rgb(83, 79, 79);
     }
@@ -41,8 +41,9 @@
     padding-left: 0.5rem;
     border-radius: 0.6rem;
     border: 0.1rem solid $light-gray;
+    background-color: white;
 
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-family: $primary-font;
     color: rgb(73, 71, 71);
 

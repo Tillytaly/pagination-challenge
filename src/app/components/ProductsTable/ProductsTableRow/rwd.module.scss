@@ -6,6 +6,7 @@
   .row {
     > td {
       font-size: map.get($font-sizes, "big");
+      height: 6rem;
     }
   }
 }

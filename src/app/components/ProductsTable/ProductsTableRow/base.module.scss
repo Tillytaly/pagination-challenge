@@ -1,12 +1,12 @@
 @use "sass:map";
 @import "@/app/styles/variables.scss";
 .row {
-  height: 6rem;
+  height: 7.5rem;
 
   > td {
-    font-size: map.get($font-sizes, "small");
+    font-size: map.get($font-sizes, "medium");
     font-family: $primary-font;
-    font-weight: 500;
+    font-weight: bold;
 
     text-transform: capitalize;
   }
