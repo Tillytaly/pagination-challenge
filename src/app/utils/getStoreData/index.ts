@@ -89,6 +89,7 @@ export const initStoreData = async (
     staticData: data.staticData,
     modal: modalData,
     totalPagesCount: data.pagination.totalPages,
+    title: data.staticData.title,
   };
 
   return storeData;

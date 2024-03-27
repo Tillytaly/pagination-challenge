@@ -22,4 +22,5 @@ export interface IStoreData {
   staticData: IStaticData;
   initialSearchValue: string;
   totalPagesCount: number;
+  title: string;
 }

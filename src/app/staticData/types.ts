@@ -5,12 +5,15 @@ export interface IColumn {
 
 export interface Input {
   label: string;
-  placeholder: string;
   name: string;
   id: string;
+}
+export interface SearchInput extends Input {
+  searchInfo: string;
 }
 
 export interface IStaticData {
   tableColumns: IColumn[];
   searchInputData: Input;
+  title: string;
 }

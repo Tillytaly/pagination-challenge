@@ -1,4 +1,6 @@
 "use client";
+
+import { useTranslations } from "next-intl";
 import { useNumberInput } from "./hooks";
 
 import SearchIcon from "@mui/icons-material/Search";
@@ -12,11 +14,12 @@ const SearchInput = ({
   id,
   label,
   name,
-  placeholder,
+  searchInfo,
   initialValue,
 }: INumberInputProps) => {
   const { handleInputChange, value, handleIconClick, searchInputRef } =
     useNumberInput(initialValue);
+  const t = useTranslations("home");
 
   return (
     <>
@@ -24,17 +27,17 @@ const SearchInput = ({
         <button
           onClick={handleIconClick}
           className={wrapperButton}
-          aria-label={label}
+          aria-label={t(label)}
         >
           <SearchIcon />
         </button>
         <input
           ref={searchInputRef}
-          aria-label={label}
+          aria-label={t(label)}
           className={wrapperInput}
           id={id}
           name={name}
-          placeholder={placeholder}
+          placeholder={t(searchInfo)}
           value={value}
           onChange={(e) => handleInputChange(e)}
         />

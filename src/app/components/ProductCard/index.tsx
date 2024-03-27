@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 import Detail from "./Detail";
 import { IProductCard } from "./types";
 
@@ -13,10 +15,12 @@ const ProductCard = ({
   pantone_value,
   year,
 }: IProductCard) => {
+  const t = useTranslations("home");
+
   return (
     <>
       <div className={heading}>
-        <p className={headingLabel}>Name</p>
+        <p className={headingLabel}>{t("name")}</p>
         <p className={headingTitle} aria-label="modal-modal-title">
           {name}
         </p>
@@ -24,7 +28,7 @@ const ProductCard = ({
       <div style={{ backgroundColor: color }} className={colorContainer} />
       <div className={details}>
         <Detail label="ID" value={id} />
-        <Detail label="Year" value={year} />
+        <Detail label={t("year")} value={year} />
         <Detail label="Pantone" value={pantone_value} />
       </div>
     </>

@@ -1,5 +1,5 @@
-import { Input } from "../../staticData/types";
-export interface INumberInputProps extends Input {
+import { SearchInput } from "../../staticData/types";
+export interface INumberInputProps extends SearchInput {
   initialValue: string;
 }
 export interface INumberInputState {

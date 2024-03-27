@@ -8,6 +8,10 @@
 
   color: $light-gray;
 
+  &:first-letter {
+    text-transform: uppercase;
+  }
+
   @media only screen and (min-width: map.get($breakpoints, "desktop")) {
     font-size: map.get($font-sizes, "small");
   }

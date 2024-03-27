@@ -9,17 +9,13 @@ const tableColumns = [
 
 const searchInputData = {
   id: "searchInput",
-  label: "Search",
+  label: "search",
   name: "search",
-  placeholder: "Search by ID",
-};
-
-export const footerData = {
-  developedBy: "Developed by",
-  developerName: "Agata Ziemniak",
+  searchInfo: "searchBy",
 };
 
 export const staticData: IStaticData = {
   tableColumns,
   searchInputData,
+  title: "colors",
 };

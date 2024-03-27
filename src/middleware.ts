@@ -1,13 +1,13 @@
-import { i18nRouter } from "next-i18n-router";
-import { NextResponse } from "next/server";
+import createMiddleware from "next-intl/middleware";
+import { localePrefix, locales } from "./navigation";
 
-import { i18nConfig } from "../i18nConfig";
-import { NextRequest } from "next/server";
+export default createMiddleware({
+  locales,
+  localePrefix,
+  defaultLocale: "en",
+});
 
-export function middleware(req: NextRequest) {
-  return i18nRouter(req, i18nConfig);
-}
-
+// only applies this middleware to files in the app directory
 export const config = {
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+  matcher: ["/((?!api|_next|.*\\..*).*)"],
 };

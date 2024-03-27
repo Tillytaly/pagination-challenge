@@ -1,3 +1,5 @@
+@import "@/app/styles/variables.scss";
+
 $footer-height: 5rem;
 
 .main {
@@ -22,13 +24,17 @@ $footer-height: 5rem;
 
 .container {
   &Title {
-    letter-spacing: 0.1rem;
+    background-clip: text;
+
     font-size: 3rem;
-    font-family: Brush Script MT;
+    font-family: $primary-font;
     font-style: italic;
 
-    -webkit-background-clip: text;
-    background-clip: text;
     text-align: center;
+    letter-spacing: 0.1rem;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
   }
 }

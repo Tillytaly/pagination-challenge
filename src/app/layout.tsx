@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { i18nConfig } from "@/../../i18nConfig";
+
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
-import { footerData } from "@/app/staticData/";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,17 +14,14 @@ export const metadata: Metadata = {
   keywords: ["Next.js", "React", "TypeScript"],
 };
 
-export function generateStaticParams() {
-  return i18nConfig.locales.map((locale) => ({ locale }));
-}
-
 export default function RootLayout(
   props: Readonly<{
     children: React.ReactNode;
+    params: { locale: string };
   }>
 ) {
   return (
-    <html lang="en">
+    <html lang={props.params.locale}>
       <body className={inter.className}>
         <header>
           <Navigation />

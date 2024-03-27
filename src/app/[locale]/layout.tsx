@@ -1,19 +1,23 @@
 import React from "react";
-import initTranslations from "@/app/initTranslations";
-import TranslationProvider from "@/app/[locale]/translationProvider";
+import { notFound } from "next/navigation";
 import { StyledEngineProvider } from "@mui/material/styles";
+import { i18nConfig } from "@/../../i18nConfig";
+import { NextIntlClientProvider, useMessages } from "next-intl";
+import { locales } from "@/navigation";
 
-const i18nNamespaces = ["translation"];
+export function generateStaticParams() {
+  return i18nConfig.locales.map((locale) => ({ locale }));
+}
 
-export default async function Layout({ children, params: { locale } }: any) {
-  const { resources } = await initTranslations(locale, i18nNamespaces);
+export default function Layout({ children, params: { locale } }: any) {
+  if (!locales.includes(locale)) {
+    notFound();
+  }
+  const messages = useMessages();
+
   return (
-    <TranslationProvider
-      locale={locale}
-      resources={resources}
-      namespaces={i18nNamespaces}
-    >
+    <NextIntlClientProvider messages={messages} locale={locale}>
       <StyledEngineProvider injectFirst>{children}</StyledEngineProvider>
-    </TranslationProvider>
+    </NextIntlClientProvider>
   );
 }
