@@ -5,9 +5,10 @@ import { SUPPORTED_LOCALES } from "@/app/constants";
 import styles from "./rwd.module.scss";
 const { navigation, navigationLink } = styles;
 
-const Navigation = () => {
-  const params = useParams();
+const Navigation = (children: any) => {
+  const { locale } = useParams();
 
+  console.log(children);
   return (
     <nav className={navigation}>
       {SUPPORTED_LOCALES.map((lang, idx) => {
