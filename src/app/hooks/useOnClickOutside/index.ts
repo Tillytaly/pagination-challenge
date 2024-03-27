@@ -3,7 +3,7 @@ import { RefObject, useEffect } from "react";
 export function useOnClickOutside(
   ref: RefObject<HTMLDivElement | null>,
   handler: (e: any) => void,
-  condition?: boolean
+  condition?: boolean,
 ) {
   useEffect(() => {
     const listener = (event: any) => {

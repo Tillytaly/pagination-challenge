@@ -8,7 +8,7 @@ export function usePanelButtons(paramToSet = "page") {
     (value: number) => {
       return router.push(`?page=${value}`);
     },
-    [router.push, paramToSet]
+    [router.push, paramToSet],
   );
 
   return {

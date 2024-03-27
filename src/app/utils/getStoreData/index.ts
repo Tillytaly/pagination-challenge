@@ -11,7 +11,7 @@ import { isNumber } from "../../lib/validation";
 export const getProductBasedData = async (
   perPage: number,
   currentPage: number = 1,
-  id?: string
+  id?: string,
 ): Promise<IProductsData> => {
   try {
     const shouldSearchForSingleProduct = id && isNumber(id);
@@ -47,7 +47,7 @@ export const getProductBasedData = async (
     } else {
       const paginatedProducts = await getPaginatedProducts(
         perPage,
-        currentPage
+        currentPage,
       );
 
       if (!paginatedProducts) {
@@ -77,7 +77,7 @@ export const getProductBasedData = async (
 
 export const initStoreData = async (
   entriesPerPage: number,
-  searchParams?: IDynamicKeys
+  searchParams?: IDynamicKeys,
 ): Promise<IStoreData> => {
   const { id, page, modal } = transformParams(searchParams);
 
