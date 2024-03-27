@@ -11,7 +11,7 @@ import { PageProps } from "@/app/types/page";
 import styles from "./rwd.module.scss";
 const { main, mainContainer, containerTitle } = styles;
 
-export default async function Index({ searchParams }: PageProps) {
+export default async function Home({ searchParams }: PageProps) {
   const {
     modal,
     products,

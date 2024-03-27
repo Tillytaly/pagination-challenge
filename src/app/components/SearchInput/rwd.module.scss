@@ -16,6 +16,7 @@
     }
 
     &Input {
+      padding-left: 2rem;
       font-size: map.get($font-sizes, "semi-big");
     }
   }

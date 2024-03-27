@@ -6,6 +6,7 @@ import { removeParam } from "@/app/utils";
 
 function useProductModal(isOpen: boolean) {
   const router = useRouter();
+
   const searchParams = useSearchParams();
 
   const handleCloseModal = useCallback(() => {

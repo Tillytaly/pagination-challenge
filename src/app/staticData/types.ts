@@ -14,6 +14,6 @@ export interface SearchInput extends Input {
 
 export interface IStaticData {
   tableColumns: IColumn[];
-  searchInputData: Input;
+  searchInputData: SearchInput;
   title: string;
 }

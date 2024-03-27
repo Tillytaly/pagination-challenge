@@ -1,0 +1,11 @@
+@use "sass:map";
+@import "@/app/styles/variables.scss";
+@import "./base.module.scss";
+
+@media only screen and (min-width: map.get($breakpoints, "small-screens")) {
+  .navigation {
+    &Link {
+      font-size: map.get($font-sizes, "base");
+    }
+  }
+}

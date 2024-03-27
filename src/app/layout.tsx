@@ -14,19 +14,20 @@ export const metadata: Metadata = {
   keywords: ["Next.js", "React", "TypeScript"],
 };
 
-export default function RootLayout(
-  props: Readonly<{
-    children: React.ReactNode;
-    params: { locale: string };
-  }>
-) {
+export default function RootLayout({
+  children,
+  params: { locale },
+}: Readonly<{
+  children: React.ReactNode;
+  params: { locale: string };
+}>) {
   return (
-    <html lang={props.params.locale}>
+    <html lang={locale}>
       <body className={inter.className}>
         <header>
           <Navigation />
         </header>
-        {props.children}
+        {children}
         <Footer />
       </body>
     </html>
