@@ -22,7 +22,6 @@ export default async function Home({ searchParams }: PageProps) {
     title,
   } = await initStoreData(PRODUCTS_PER_PAGE, searchParams);
 
-  const withModal = true;
   return (
     <main className={main}>
       <div className={mainContainer}>
@@ -34,7 +33,7 @@ export default async function Home({ searchParams }: PageProps) {
         <ProductsTable
           columns={staticData.tableColumns}
           products={products}
-          withModal={withModal}
+          withModal={true}
         />
         <ProductModal {...modal} />
       </div>
