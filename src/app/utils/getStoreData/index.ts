@@ -24,7 +24,9 @@ export const getProductBasedData = async (
         return baseProductsState;
       }
 
-      const isAnyDataFound = Object.keys(getProductResult?.data).length > 0;
+      const isAnyDataFound =
+        getProductResult?.data &&
+        Object.keys(getProductResult?.data).length > 0;
 
       if (!isAnyDataFound) return baseProductsState;
 
