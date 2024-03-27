@@ -1,7 +1,7 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useRef } from "react";
 
-import { useOnClickOutside } from "@/app/hooks";
+import { useOnClickOutside, useLockBodyScroll } from "@/app/hooks";
 import { removeParam } from "@/app/utils";
 
 function useProductModal(isOpen: boolean) {
@@ -15,6 +15,7 @@ function useProductModal(isOpen: boolean) {
 
   const modalRef = useRef<HTMLDivElement | null>(null);
   useOnClickOutside(modalRef, handleCloseModal, !isOpen);
+  useLockBodyScroll(isOpen);
 
   return {
     modalRef,

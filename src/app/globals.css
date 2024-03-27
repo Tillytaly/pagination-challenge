@@ -34,3 +34,11 @@ a {
     color-scheme: dark;
   }
 }
+
+.body--fixed {
+  position: fixed;
+
+  left: 0;
+  right: 0;
+  padding-right: 0;
+}
