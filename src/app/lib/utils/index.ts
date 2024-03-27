@@ -7,5 +7,3 @@ export const cx: Cx = (...args) => {
     )
     .join(" ");
 };
-
-export const regexForAlphabeticalCharacter = /^[a-zA-Z]/;

@@ -9,6 +9,7 @@ import styles from "./base.module.scss";
 const { nav } = styles;
 
 import { IPaginationPanel } from "./types";
+
 const PaginationPanel = ({ paramToSet, totalPagesCount }: IPaginationPanel) => {
   const { handleButtonClick } = usePanelButtons(paramToSet);
 
