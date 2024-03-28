@@ -13,6 +13,14 @@ const Navigation = () => {
         const isZeroIndex = !idx;
         const label = isZeroIndex ? lang : `/ ${lang}`;
 
+        if (lang === "en") {
+          return (
+            <Link key={idx} href="/" className={navigationLink}>
+              {label}
+            </Link>
+          );
+        }
+
         return (
           <Link key={idx} href={`/${lang}`} className={navigationLink}>
             {label}
