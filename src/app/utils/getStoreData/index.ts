@@ -12,7 +12,7 @@ export interface RequestHandlers {
   handleSingleResourceRequest: (id: string) => Promise<IProductsData>;
   handleMultipleResourcesRequest: (
     perPage: number,
-    currentPage: number
+    currentPage: number,
   ) => Promise<IProductsData>;
 }
 
@@ -22,18 +22,18 @@ const productsRequestHandler = async (
     handleSingleResourceRequest,
   }: RequestHandlers,
   requestParams: RequestParams,
-  conditionToCallSingleResource: boolean
+  conditionToCallSingleResource: boolean,
 ) => {
   return conditionToCallSingleResource
     ? handleSingleResourceRequest(requestParams.id)
     : handleMultipleResourcesRequest(
         requestParams.entriesPerPage,
-        requestParams.page
+        requestParams.page,
       );
 };
 
 const handleSingleResourceRequest = async (
-  id: string
+  id: string,
 ): Promise<IProductsData> => {
   try {
     const getProductResult = await getProduct(Number(id));
@@ -68,7 +68,7 @@ const handleSingleResourceRequest = async (
 
 const handleMultipleResourcesRequest = async (
   perPage: number,
-  currentPage: number = 1
+  currentPage: number = 1,
 ): Promise<IProductsData> => {
   const paginatedProducts = await getPaginatedProducts(perPage, currentPage);
   try {
@@ -98,7 +98,7 @@ const handleMultipleResourcesRequest = async (
 
 export const initStoreData = async (
   entriesPerPage: number,
-  searchParams?: IDynamicKeys
+  searchParams?: IDynamicKeys,
 ): Promise<IStoreData> => {
   const { id, page, modal } = transformParams(searchParams);
 
@@ -114,7 +114,7 @@ export const initStoreData = async (
       page,
       entriesPerPage,
     },
-    shouldSearchForSingleProduct
+    shouldSearchForSingleProduct,
   );
 
   const modalData = getModalData(data.products, modal);

@@ -11,7 +11,6 @@ const Navigation = () => {
     <nav className={navigation}>
       {SUPPORTED_LOCALES.map((lang, idx) => {
         const isZeroIndex = !idx;
-
         const label = isZeroIndex ? lang : `/ ${lang}`;
 
         return (

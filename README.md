@@ -41,4 +41,4 @@ mui/icons-material  i18nexus prettier next-intl UUID
 - Add tests,
 - Adjust styles according to user lightness preferences,
 - Add translations to Error pages as well,
-- Improve modal styling to be something more interesting  
+- Improve modal styling to be something more interesting

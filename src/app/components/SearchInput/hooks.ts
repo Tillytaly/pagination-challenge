@@ -13,7 +13,7 @@ const { DEBOUNCE_SUCCESS, VALUE_CHANGED } = Actions;
 const defaultDebounceDuration = 200;
 export function useNumberInput(
   initialInputValue: string,
-  debounceDuration = defaultDebounceDuration
+  debounceDuration = defaultDebounceDuration,
 ) {
   const initialLoadRef = useRef<boolean>(true);
   const searchInputRef = useRef<HTMLInputElement | null>(null);
@@ -25,7 +25,7 @@ export function useNumberInput(
       ...inputInitialState,
       debouncedValue: initialInputValue,
       searchedValue: initialInputValue,
-    }
+    },
   );
 
   const handleIconClick = useCallback(() => {
@@ -41,7 +41,7 @@ export function useNumberInput(
         type: VALUE_CHANGED,
       });
     },
-    []
+    [],
   );
 
   useEffect(() => {
