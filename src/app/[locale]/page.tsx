@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+
 import { PRODUCTS_PER_PAGE } from "@/app/constants";
 import { initStoreData } from "@/app/utils";
 
