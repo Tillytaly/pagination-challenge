@@ -1,28 +1,26 @@
 "use client";
 import Link from "next/link";
 
+import { useSearchParams } from "next/navigation";
 import { SUPPORTED_LOCALES } from "@/app/constants";
 
 import styles from "./rwd.module.scss";
 const { navigation, navigationLink } = styles;
 
 const Navigation = () => {
+  const searchParams = useSearchParams();
+
   return (
     <nav className={navigation}>
       {SUPPORTED_LOCALES.map((lang, idx) => {
-        const isZeroIndex = !idx;
-        const label = isZeroIndex ? lang : `/ ${lang}`;
-
-        if (lang === "en") {
-          return (
-            <Link key={idx} href="/" className={navigationLink}>
-              {label}
-            </Link>
-          );
-        }
+        const label = `/ ${lang}`;
 
         return (
-          <Link key={idx} href={`/${lang}`} className={navigationLink}>
+          <Link
+            key={idx}
+            href={`/${lang}?${searchParams.toString()}`}
+            className={navigationLink}
+          >
             {label}
           </Link>
         );
