@@ -12,3 +12,8 @@ export interface LayoutProps {
   children: React.ReactNode;
   params: ILocaleParams;
 }
+
+export interface IError {
+  error: Error;
+  reset: () => void;
+}

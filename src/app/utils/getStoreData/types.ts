@@ -24,3 +24,9 @@ export interface IStoreData {
   totalPagesCount: number;
   title: string;
 }
+
+export interface RequestParams {
+  id: string;
+  page: number;
+  entriesPerPage: number;
+}
