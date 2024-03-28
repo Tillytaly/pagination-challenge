@@ -1,6 +1,8 @@
 "use client";
 import { useTranslations } from "next-intl";
 
+import { IError } from "./types/page";
+
 import styles from "./styles/error/base.module.scss";
 const {
   container,
@@ -10,11 +12,12 @@ const {
   containerBtn,
 } = styles;
 
-const Error = ({ error, reset }: { error: Error; reset: () => void }) => {
+const Error = ({ error, reset }: IError) => {
   const t = useTranslations("error");
+
   return (
     <div className={container}>
-      <p className={containerTextBig}>{"Oops!"} </p>
+      <p className={containerTextBig}>{t("oops!")} </p>
       <p className={containerTitle}>{t("general_message")}</p>
       {error.message && (
         <p className={containerText}>{`Error: ${error.message}`}</p>
@@ -22,9 +25,9 @@ const Error = ({ error, reset }: { error: Error; reset: () => void }) => {
       <button
         onClick={reset}
         className={containerBtn}
-        aria-label={"Something went wrong"}
+        aria-label={t("general_message")}
       >
-        Try again
+        (t{"try_again"})
       </button>
     </div>
   );

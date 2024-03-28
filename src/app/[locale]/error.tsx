@@ -24,9 +24,8 @@ const Error = ({ error, reset }: { error: Error; reset: () => void }) => {
         className={containerBtn}
         aria-label={t("general_message")}
       >
-        {t("Try again")}
+        {t("try_again")}
       </button>
-      <>here</>
     </div>
   );
 };

@@ -1,10 +1,11 @@
 @import "../mixins.scss";
 
-$icon-dimension: 15rem;
+$icon-dimension: 20rem;
 .notFound {
   @include error-container;
   font-size: 2rem;
 
+  text-align: center;
   &Container {
     display: grid;
     grid-gap: 2rem;
@@ -22,9 +23,14 @@ $icon-dimension: 15rem;
     @include error-title;
   }
 
+  &Message {
+    font-size: 3rem;
+  }
+
   &Link {
     color: $light-blue;
     font-weight: bold;
+    font-size: 3.5rem;
 
     &:hover {
       text-decoration: underline;
